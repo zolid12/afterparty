@@ -1,0 +1,59 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+@import 'buttons';
+@import 'nav';
+@import 'footer';
+
+
+body {
+  font-family: 'Noto Sans','PT Sans','Open Sans','Helvetica Neue',Arial,Helvetica,sans-serif;
+  background: url(/images/bg.png) #fff;
+  padding-top: 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.image-holder {
+  position: relative;
+  &:hover {
+    .btn-delete-image {
+      display: block;
+    }
+  }
+}
+
+.btn-delete-image {
+  position: absolute;
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 20px;
+  width: 85px;
+}
+
+.angular-google-map-container {
+  height: 500px;
+
+}
+
+.main-map {
+  border: 10px solid #fff;
+  box-shadow: 0 0 5px #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+

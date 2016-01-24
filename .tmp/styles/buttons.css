@@ -1,0 +1,18 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/madu\/dev\/efterfest\/app\/styles\/buttons\.scss}line{font-family:\000031}}
+.btn-default {
+  color: black;
+  background-color: white;
+  border-radius: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/madu\/dev\/efterfest\/app\/styles\/buttons\.scss}line{font-family:\000038}}
+.logout {
+  margin-top: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/madu\/dev\/efterfest\/app\/styles\/buttons\.scss}line{font-family:\0000312}}
+.accepted {
+  font-size: 20px;
+  color: green;
+  font-weight: bold;
+}

@@ -1,0 +1,79 @@
+
+<div class="row-fluid">
+  <div class="col-xs-12">
+    <p>
+      <a class="btn btn-default" href="#/">Tillbaka</a>
+    </p>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="col-xs-4">
+    <a class="btn btn-default btn-block" ng-class="{active: tab === 'efterfester'}" href="/#konto/efterfester">Dina efterfester</a>
+  </div>
+  <div class="col-xs-4">
+    <a class="btn btn-default btn-block" ng-class="{active: tab === 'skickade'}" href="/#konto/skickade">Skickade förfrågningar</a>
+  </div>
+  <div class="col-xs-4">
+    <a class="btn btn-default btn-block" ng-class="{active: tab === 'mottagna'}" href="/#konto/mottagna">Mottagna förfrågningar</a>
+  </div>
+</div>
+
+<div class="row-fluid" ng-show="tab === 'efterfester'">
+  <div class="col-xs-12">
+    <h3>Dina efterfester</h3>
+    <div class="media" ng-repeat="party in myParties">
+      <div class="pull-left" href="#">
+        <img style="width: 200px;" ng-src="{{party.image.link || 'http://www.insite.io/browser/home/accounts/assets/images/no-profile-image.jpg'}}" alt="...">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{party.description}}</h4>
+        <a href="#/efterfest/{{party.$id}}">Visa</a>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="col-xs-4">
+  <button  class="btn btn-primary btn-lg btn-block logout" ng-click="logout();">Logga ut</button>
+  </div>
+</div>
+
+<div class="row-fluid" ng-show="tab === 'skickade'">
+  <div class="col-xs-12">
+    <h3>Skickade förfrågningar</h3>
+    <div class="media" ng-repeat="request in sentRequests">
+      <div class="pull-left" href="#">
+        <img style="width: 200px;" ng-src="{{request.image.link || 'http://www.insite.io/browser/home/accounts/assets/images/no-profile-image.jpg'}}">
+      </div>
+      <div class="media-body">
+        <p class="text-success accepted" ng-show="request.approved">Godkänd!</p>
+        <p class="text-info" ng-show="!request.approved">Väntar på godkännande</p>
+        <h4 class="media-heading">{{request.message}}</h4>
+
+        <p><a href="#/efterfest/{{request.partyId}}">Visa fest</a></p>
+
+        <button ng-click="remove(request)" class="btn btn-danger">Ta bort förfrågan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row-fluid" ng-show="tab === 'mottagna'">
+  <div class="col-xs-12">
+    <h3>Mottagna förfrågningar</h3>
+    <div class="media" ng-repeat="request in receivedRequests">
+      <div class="pull-left" href="#">
+        <img style="width: 200px;" ng-src="{{request.image.link || 'http://www.insite.io/browser/home/accounts/assets/images/no-profile-image.jpg'}}">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{request.message}}</h4>
+        <p><a href="#/efterfest/{{request.partyId}}">Visa fest</a></p>
+        <button ng-show="!request.approved" ng-click="approve(request, true)" class="btn btn-default">Ej godkänd</button>
+        <button ng-show="request.approved" ng-click="approve(request, false)" class="btn btn-success active">Godkänd!</button>
+      </div>
+    </div>
+  </div>
+</div>
