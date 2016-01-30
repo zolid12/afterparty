@@ -1,15 +1,13 @@
 #Efterfest
 
+#Install:
 
-Install:
-
-Npm install
-ruby
-Compass 
-bower
-grunt
-
+#  npminstall
+#  ruby
+#  Compass
+#  bower
+#  grunt
 
 
-Then run grunt serve in prompt
-
+#Then run grunt serve in prompt
+#“Don’t use ad-blocker”
